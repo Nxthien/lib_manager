@@ -13,6 +13,12 @@ class Book < ApplicationRecord
   mount_uploader :cover_image, ImageUploader
   mount_uploader :image, ImageUploader
 
+  scope :search_book, -> book_name, author_name, category_name do
+    where("books.name LIKE ?","%#{book_name}%")
+    .joins(:authors).where("authors.name LIKE ?", "%#{author_name}%")
+    .joins(:categories).where("categories.name LIKE ?", "%#{category_name}%")
+  end
+
   rails_admin do
     exclude_fields :categories, :relationships, :users, :borrow_books, :comments, :user_ratings, :authors
   end
