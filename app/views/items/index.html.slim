@@ -2,7 +2,7 @@ section.search-filters
   .container
     .filter-box
       h3 List Books
-      = form_for :search, url: items_search_path do |f|
+      = form_for :search, url: items_search_path, remote: true do |f|
         .col-md-4.col-sm-6
           .form-group
             label.sr-only for='name' Search by name
@@ -38,12 +38,7 @@ section.category-filter.section-padding
       .filter.btn data-filter=".magazines"  Magazines
 .list-book.category-filter
   #category-filter
-  = render 'list_books', books: @books
-javascript:
-  $('.rating-item').barrating({
-    theme: 'bootstrap-stars',
-    readonly: true,
-  });
+    = render 'list_books', books: @books
 sass:
   .filter-box
     input

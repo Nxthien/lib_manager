@@ -7,9 +7,9 @@ class ItemsController < ApplicationController
 	end
 
 	def search
-		binding.pry
 		@books = Book.search_book(params[:search][:name], params[:search][:author], params[:search][:category])
-		response do |format|
+		respond_to do |format|
+			format.html {redirect_to items_path}
 			format.js
 		end
 	end
