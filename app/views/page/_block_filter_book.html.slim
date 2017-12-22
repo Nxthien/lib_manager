@@ -1,0 +1,26 @@
+section.category-filter.section-padding
+  .container
+    .center-content
+      .row
+        .col-md-6.col-md-offset-3
+          h2.section-title Check Out The New Releases
+          span.underline.center
+          p.lead The standard chunk of Lorem Ipsum used since the 1500s is reproduced below for those interested.
+        .clearfix
+    .filter-buttons
+      = link_to 'All Category', items_search_path('search[name]': '', 'search[category]': '', 'search[author]': ''), method: :post, class: 'filter btn active', remote: true
+      = link_to 'Adults', items_search_path('search[name]': '', 'search[category]': 'Adults', 'search[author]': ''), method: :post, class: 'filter btn', remote: true
+      = link_to 'Advanture', items_search_path('search[name]': '', 'search[category]': 'Advanture', 'search[author]': ''), method: :post, class: 'filter btn', remote: true
+      = link_to 'Action', items_search_path('search[name]': '', 'search[category]': 'Action', 'search[author]': ''), method: :post, class: 'filter btn', remote: true
+      = link_to 'Romantic', items_search_path('search[name]': '', 'search[category]': 'Romantic', 'search[author]': ''), method: :post, class: 'filter btn', remote: true
+      = link_to 'Horror', items_search_path('search[name]': '', 'search[category]': 'Romantic', 'search[author]': ''), method: :post, class: 'filter btn', remote: true
+      = link_to 'Science', items_search_path('search[name]': '', 'search[category]': 'Science', 'search[author]': ''), method: :post, class: 'filter btn', remote: true
+.list-book.category-filter
+  #category-filter
+    = render 'shared/list_books', books: @books
+
+javascript:
+  $('.filter').on('click', function(){
+    $('.filter').removeClass('active');
+    $(this).addClass('active');
+  });
