@@ -17,6 +17,7 @@
                   thead
                     tr
                       th.product-name Title
+                      th.product-name Status
                       th.product-name
                         a.select-box data-checked='true' Selete All
                         | /
@@ -39,6 +40,9 @@
                                 strong Amount: #{book.book.amount}
                               span
                                 strong Publish Year: #{book.book.publisher_year}
+                        td
+                          span.bt-content
+                            = book.status
                         td.product-cbox data-th=" " data-title="cbox"
                           span.bt-content
                             span

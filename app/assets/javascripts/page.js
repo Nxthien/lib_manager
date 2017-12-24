@@ -147,4 +147,8 @@ $( document ).on('turbolinks:load', function() {
       var checkboxes = $('.item-checkbox').prop('checked', false)
     }
   });
+
+  $('img').on('error', function(){
+
+  });
 });

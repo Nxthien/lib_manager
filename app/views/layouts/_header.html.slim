@@ -7,7 +7,7 @@ header#header-v1.navbar-wrapper
             .navbar-header
               .navbar-brand
                 h1
-                  a[href="http://demo.presstigers.com/libraria/public_html/index.html"]
+                  = link_to root_path do
                     = image_tag 'libraria-logo-v1.png'
           .col-md-9
             .header-topbar.hidden-sm.hidden-xs
@@ -17,11 +17,6 @@ header#header-v1.navbar-wrapper
                     a[href="tel:+61-3-8376-6284"]
                       i.fa.fa-phone
                       | +61-3-8376-6284
-                    span
-                      | /
-                    a[href="mailto:support@libraria.com"]
-                      i.fa.fa-envelope
-                      | support@libraria.com
                 .col-sm-6
                   .topbar-links style='color: white'
                     - if current_user.present?
@@ -51,160 +46,24 @@ header#header-v1.navbar-wrapper
                           = link_to 'View Cart', carts_path, class: 'btn btn-dark-gray'
             .navbar-collapse.hidden-sm.hidden-xs
               ul.nav.navbar-nav
-                li.dropdown.active
-                  a.dropdown-toggle.disabled[data-toggle="dropdown" href="http://demo.presstigers.com/libraria/public_html/index.html"]
-                    | Home
-                  ul.dropdown-menu
-                    li
-                      a[href="http://demo.presstigers.com/libraria/public_html/index.html"]
-                        | Home V1
-                    li
-                      a[href="http://demo.presstigers.com/libraria/public_html/home-v2.html"]
-                        | Home V2
-                    li
-                      a[href="http://demo.presstigers.com/libraria/public_html/home-v3.html"]
-                        | Home V3
-                li.dropdown
-                  a.dropdown-toggle.disabled[data-toggle="dropdown" href="http://demo.presstigers.com/libraria/public_html/books-media-list-view.html"]
-                    | Books & Media
-                  ul.dropdown-menu[style=""]
-                    li
-                      a[href="http://demo.presstigers.com/libraria/public_html/books-media-list-view.html"]
-                        | Books & Media List View
-                    li
-                      a[href="http://demo.presstigers.com/libraria/public_html/books-media-gird-view-v1.html"]
-                        | Books & Media Grid View V1
-                    li
-                      a[href="http://demo.presstigers.com/libraria/public_html/books-media-gird-view-v2.html"]
-                        | Books & Media Grid View V2
-                    li
-                      a[href="http://demo.presstigers.com/libraria/public_html/books-media-detail-v1.html"]
-                        | Books & Media Detail V1
-                    li
-                      a[href="http://demo.presstigers.com/libraria/public_html/books-media-detail-v2.html"]
-                        | Books & Media Detail V2
-                li.dropdown
-                  a.dropdown-toggle.disabled[data-toggle="dropdown" href="http://demo.presstigers.com/libraria/public_html/news-events-list-view.html"]
-                    | News & Events
-                  ul.dropdown-menu[style=""]
-                    li
-                      a[href="http://demo.presstigers.com/libraria/public_html/news-events-list-view.html"]
-                        | News & Events List View
-                    li
-                      a[href="http://demo.presstigers.com/libraria/public_html/news-events-detail.html"]
-                        | News & Events Detail
-                li.dropdown
-                  a.dropdown-toggle.disabled[data-toggle="dropdown" href="./_.__ LIBRARIA __.._files/saved_resource"]
-                    | Pages
-                  ul.dropdown-menu
-                    li
-                      a[href="http://demo.presstigers.com/libraria/public_html/cart.html"]
-                        | Cart
-                    li
-                      a[href="http://demo.presstigers.com/libraria/public_html/checkout.html"]
-                        | Checkout
-                    li
-                      a[href="http://demo.presstigers.com/libraria/public_html/signin.html"]
-                        | Signin/Register
-                    li
-                      a[href="http://demo.presstigers.com/libraria/public_html/404.html"]
-                        | 404/Error
-                li.dropdown
-                  a.dropdown-toggle.disabled[data-toggle="dropdown" href="http://demo.presstigers.com/libraria/public_html/blog.html"]
-                    | Blog
-                  ul.dropdown-menu
-                    li
-                      a[href="http://demo.presstigers.com/libraria/public_html/blog.html"]
-                        | Blog Grid View
-                    li
-                      a[href="http://demo.presstigers.com/libraria/public_html/blog-detail.html"]
-                        | Blog Detail
                 li
-                  a[href="http://demo.presstigers.com/libraria/public_html/services.html"]
-                    | Services
+                  = link_to 'Home', root_path
                 li
-                  a[href="http://demo.presstigers.com/libraria/public_html/contact.html"]
-                    | Contact
+                  = link_to 'Cart', carts_path
+                li
+                  = link_to 'Books', items_path
         .mobile-menu.hidden-lg.hidden-md
-          a[href="http://demo.presstigers.com/libraria/public_html/#mobile-menu"]
+          = link_to '#mobile-menu' do
             i.fa.fa-navicon
           #mobile-menu
             ul
               li.mobile-title
                 h4
                   | Navigation
-                a.close[href="./_.__ LIBRARIA __.._files/saved_resource"]
               li
-                a[href="http://demo.presstigers.com/libraria/public_html/index.html"]
-                  | Home
-                ul
-                  li
-                    a[href="http://demo.presstigers.com/libraria/public_html/index.html"]
-                      | Home V1
-                  li
-                    a[href="http://demo.presstigers.com/libraria/public_html/home-v2.html"]
-                      | Home V2
-                  li
-                    a[href="http://demo.presstigers.com/libraria/public_html/home-v3.html"]
-                      | Home V3
+                = link_to 'Home', root_path
               li
-                a[href="http://demo.presstigers.com/libraria/public_html/books-media-list-view.html"]
-                  | Books & Media
-                ul
-                  li
-                    a[href="http://demo.presstigers.com/libraria/public_html/books-media-list-view.html"]
-                      | Books & Media List View
-                  li
-                    a[href="http://demo.presstigers.com/libraria/public_html/books-media-gird-view-v1.html"]
-                      | Books & Media Grid View V1
-                  li
-                    a[href="http://demo.presstigers.com/libraria/public_html/books-media-gird-view-v2.html"]
-                      | Books & Media Grid View V2
-                  li
-                    a[href="http://demo.presstigers.com/libraria/public_html/books-media-detail-v1.html"]
-                      | Books & Media Detail V1
-                  li
-                    a[href="http://demo.presstigers.com/libraria/public_html/books-media-detail-v2.html"]
-                      | Books & Media Detail V2
+                = link_to 'Cart', carts_path
               li
-                a[href="http://demo.presstigers.com/libraria/public_html/news-events-list-view.html"]
-                  | News & Events
-                ul
-                  li
-                    a[href="http://demo.presstigers.com/libraria/public_html/news-events-list-view.html"]
-                      | News & Events List View
-                  li
-                    a[href="http://demo.presstigers.com/libraria/public_html/news-events-detail.html"]
-                      | News & Events Detail
-              li
-                a[href="./_.__ LIBRARIA __.._files/saved_resource"]
-                  | Pages
-                ul
-                  li
-                    a[href="http://demo.presstigers.com/libraria/public_html/cart.html"]
-                      | Cart
-                  li
-                    a[href="http://demo.presstigers.com/libraria/public_html/checkout.html"]
-                      | Checkout
-                  li
-                    a[href="http://demo.presstigers.com/libraria/public_html/signin.html"]
-                      | Signin/Register
-                  li
-                    a[href="http://demo.presstigers.com/libraria/public_html/404.html"]
-                      | 404/Error
-              li
-                a[href="http://demo.presstigers.com/libraria/public_html/blog.html"]
-                  | Blog
-                ul
-                  li
-                    a[href="http://demo.presstigers.com/libraria/public_html/blog.html"]
-                      | Blog Grid View
-                  li
-                    a[href="http://demo.presstigers.com/libraria/public_html/blog-detail.html"]
-                      | Blog Detail
-              li
-                a[href="http://demo.presstigers.com/libraria/public_html/services.html"]
-                  | Services
-              li
-                a[href="http://demo.presstigers.com/libraria/public_html/contact.html"]
-                  | Contact
+                = link_to 'Books', items_path
+              

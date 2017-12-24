@@ -3,10 +3,11 @@
     .row
       .cart-head
         .col-xs-12.col-sm-6.account-option
-          strong current_user.name
-          ul
-            li
-              = link_to "Edit Account", edit_user_path(current_user)
+          - if current_user.present?
+            strong current_user.name
+            ul
+              li
+                = link_to "Edit Account", edit_user_path(current_user)
       .col-md-12
         .page.type-page.status-publish.hentry
           .entry-content

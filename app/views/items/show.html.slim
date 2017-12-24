@@ -1,3 +1,12 @@
+section.page-banner.services-banner
+  .container
+    .banner-header
+      h2 #{@book.name}
+    .breadcrumb
+      ul
+        li
+          = link_to 'Home', root_path
+        li Dashboard
 #content.site-content
   #primary.content-area
     main#main.site-main style="margin-top: 100px"
@@ -8,12 +17,12 @@
               .booksmedia-detail-box
                 .single-book-box
                   .post-thumbnail style="margin: 0px; padding: 50px"
-                    = image_tag @book.image
+                    = image_tag 'category-filter-img-03.jpg'
                   .post-detail style="right: -60px; width: 420px; padding: 30px"
                     .optional-links
                       ul
                         li
-                          a data-original-title=("Add To Cart") data-placement="top" data-toggle="blog-tags"
+                          a data-original-title=("Add To Cart") data-placement="top" data-toggle="blog-tags" onClick="add_item(event)" data-item="#{@book.to_json}"
                             i.fa.fa-shopping-cart
                     header.entry-header
                       h2.entry-title #{@book.name}
